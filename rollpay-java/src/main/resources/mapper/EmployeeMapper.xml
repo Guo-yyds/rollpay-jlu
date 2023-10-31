@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.rollpay.mapper.EmployeeMapper">
+    <update id="update" parameterType="com.example.rollpay.entity.Employee">
+        update employee
+        <set>
+            <if test="username != null">username = #{username},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="SSN != null">SSN = #{SSN},</if>
+            <if test="tax != null">tax = #{tax},</if>
+            <if test="detection != null">detection = #{detection},</if>
+            <if test="telephone != null">telephone = #{telephone},</if>
+            <if test="kind != null">kind = #{kind},</if>
+            <if test="hoursal != null">hoursal = #{hoursal},</if>
+            <if test="sal != null">sal = #{sal},</if>
+            <if test="com != null">com = #{com},</if>
+            <if test="hourlimit != null">hourlimit = #{hourlimit},</if>
+            <if test="way != null">way = #{way},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="bankname != null">bankname = #{bankname},</if>
+            <if test="banknumber != null">banknumber = #{banknumber},</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="payment" parameterType="com.example.rollpay.dto.EmployeePaymentDTO">
+        update employee
+        <set>
+            <if test="way != null">way = #{way},</if>
+            <if test="address != null">address = #{address},</if>
+            <if test="bankname != null">bankname = #{bankname},</if>
+            <if test="banknumber != null">banknumber = #{banknumber},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
